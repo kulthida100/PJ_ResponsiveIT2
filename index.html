@@ -4,177 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git & GitHub สำหรับผู้เริ่มต้น</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card: #111827;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
-            --accent: #22c55e;
-            --accent2: #38bdf8;
-            --border: #1f2937;
-        }
-
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #020617, #111827);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        a { color: inherit; text-decoration: none; }
-
-        .container {
-            width: min(1100px, calc(100% - 2rem));
-            margin: 0 auto;
-        }
-
-        header {
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .nav-links a {
-            margin-left: 1rem;
-            color: var(--muted);
-        }
-
-        .hero {
-            padding: 4rem 0 3rem;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            margin: 0 0 1rem;
-        }
-
-        .hero p {
-            color: var(--muted);
-            font-size: 1.05rem;
-            max-width: 650px;
-        }
-
-        .hero .card {
-            background: linear-gradient(145deg, rgba(34,197,94,0.16), rgba(56,189,248,0.14));
-            border: 1px solid var(--border);
-            padding: 1.2rem;
-            border-radius: 16px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 1.1rem;
-            border-radius: 999px;
-            background: var(--accent);
-            color: #052e16;
-            font-weight: 700;
-        }
-
-        section {
-            padding: 1.2rem 0 2.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #fff;
-        }
-
-        .card p, .card li {
-            color: var(--muted);
-        }
-
-        pre {
-            background: #020617;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            overflow-x: auto;
-            color: #cbd5e1;
-        }
-
-        .steps {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .pill {
-            display: inline-block;
-            padding: 0.3rem 0.6rem;
-            border-radius: 999px;
-            background: rgba(56,189,248,0.15);
-            color: #7dd3fc;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            padding: 2rem 0 3rem;
-            color: var(--muted);
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        @media (max-width: 800px) {
-            .hero, .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a class="brand" href="#">Git & GitHub Guide</a>
-                <div class="nav-links">
-                    <a href="#what">พื้นฐาน</a>
-                    <a href="#commands">คำสั่ง</a>
-                    <a href="#workflow">Workflow</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <header id="site-header" class="site-header"></header>
 
     <main class="container">
         <section class="hero">
@@ -258,10 +91,8 @@ git push origin feature/new-page</pre>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>สร้างขึ้นเพื่อช่วยให้ผู้เริ่มต้นเข้าใจพื้นฐานของ Git และ GitHub ได้ง่ายขึ้น</p>
-        </div>
-    </footer>
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="JS/script.js"></script>
 </body>
 </html>
