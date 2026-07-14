@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub สำหรับผู้เริ่มต้น</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #111827;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #22c55e;
+            --accent2: #38bdf8;
+            --border: #1f2937;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #020617, #111827);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(1100px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .nav-links a {
+            margin-left: 1rem;
+            color: var(--muted);
+        }
+
+        .hero {
+            padding: 4rem 0 3rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            margin: 0 0 1rem;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 650px;
+        }
+
+        .hero .card {
+            background: linear-gradient(145deg, rgba(34,197,94,0.16), rgba(56,189,248,0.14));
+            border: 1px solid var(--border);
+            padding: 1.2rem;
+            border-radius: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.1rem;
+            border-radius: 999px;
+            background: var(--accent);
+            color: #052e16;
+            font-weight: 700;
+        }
+
+        section {
+            padding: 1.2rem 0 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .card p, .card li {
+            color: var(--muted);
+        }
+
+        pre {
+            background: #020617;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #cbd5e1;
+        }
+
+        .steps {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(56,189,248,0.15);
+            color: #7dd3fc;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            padding: 2rem 0 3rem;
+            color: var(--muted);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 800px) {
+            .hero, .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a class="brand" href="#">Git & GitHub Guide</a>
+                <div class="nav-links">
+                    <a href="#what">พื้นฐาน</a>
+                    <a href="#commands">คำสั่ง</a>
+                    <a href="#workflow">Workflow</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div>
+                <span class="pill">สำหรับผู้เริ่มต้น</span>
+                <h1>เรียนรู้การใช้ Git และ GitHub แบบง่าย ๆ</h1>
+                <p>Git คือระบบจัดการเวอร์ชันของไฟล์ส่วนตัวและทีมงาน ส่วน GitHub คือแพลตฟอร์มสำหรับเก็บโค้ดบนคลาวด์และทำงานร่วมกันได้อย่างสะดวก</p>
+                <a class="btn" href="#workflow">เริ่มใช้งานเลย</a>
+            </div>
+            <div class="card">
+                <h3>สิ่งที่คุณจะได้เรียนรู้</h3>
+                <ul>
+                    <li>Git คืออะไรและทำไมต้องใช้</li>
+                    <li>คำสั่งพื้นฐานที่ควรรู้</li>
+                    <li>วิธีอัปโหลดโปรเจกต์ขึ้น GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="what">
+            <h2>Git กับ GitHub ต่างกันอย่างไร?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Git</h3>
+                    <p>Git เป็นเครื่องมือจัดการเวอร์ชันของโค้ดที่ช่วยติดตามความเปลี่ยนแปลงและย้อนกลับได้</p>
+                </div>
+                <div class="card">
+                    <h3>GitHub</h3>
+                    <p>GitHub เป็นบริการเว็บสำหรับเก็บ repository, แชร์โค้ดและร่วมมือกับคนอื่น</p>
+                </div>
+                <div class="card">
+                    <h3>Why use it?</h3>
+                    <p>ช่วยให้ทำงานเป็นทีมได้ดีขึ้น ปลอดภัยกว่า และไม่ต้องกลัวการลบไฟล์สำคัญ</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="commands">
+            <h2>คำสั่งพื้นฐานที่ควรรู้</h2>
+            <div class="steps">
+                <div class="card">
+                    <h3>1. สร้าง repository ใหม่</h3>
+                    <pre>git init</pre>
+                    <p>เริ่มติดตามโฟลเดอร์ปัจจุบันเป็น Git repository</p>
+                </div>
+                <div class="card">
+                    <h3>2. เพิ่มไฟล์เข้า staging area</h3>
+                    <pre>git add .</pre>
+                    <p>เตรียมไฟล์ที่ต้องการบันทึกการเปลี่ยนแปลง</p>
+                </div>
+                <div class="card">
+                    <h3>3. บันทึกความเปลี่ยนแปลง</h3>
+                    <pre>git commit -m "เพิ่มหน้าแรก"</pre>
+                    <p>บันทึก snapshot ของงานในปัจจุบัน</p>
+                </div>
+                <div class="card">
+                    <h3>4. ส่งขึ้น GitHub</h3>
+                    <pre>git push origin main</pre>
+                    <p>อัปโหลดโค้ดไปยังเซิร์ฟเวอร์ของ GitHub</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow">
+            <h2>Workflow แบบง่าย ๆ</h2>
+            <div class="card">
+                <ol>
+                    <li>สร้างหรือ clone repository จาก GitHub</li>
+                    <li>แก้ไขไฟล์และบันทึกงาน</li>
+                    <li>ใช้คำสั่ง git add และ git commit</li>
+                    <li>ส่งงานด้วย git push</li>
+                    <li>ตรวจสอบความเปลี่ยนแปลงบน GitHub</li>
+                </ol>
+                <pre>git clone https://github.com/username/repo.git
+cd repo
+git checkout -b feature/new-page
+git add .
+git commit -m "เพิ่มหน้าใหม่"
+git push origin feature/new-page</pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>สร้างขึ้นเพื่อช่วยให้ผู้เริ่มต้นเข้าใจพื้นฐานของ Git และ GitHub ได้ง่ายขึ้น</p>
+        </div>
+    </footer>
+</body>
+</html>
